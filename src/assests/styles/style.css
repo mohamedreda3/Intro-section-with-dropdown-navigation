@@ -1,0 +1,411 @@
+.App {
+    overflow-x: hidden;
+    position: relative;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    min-height: 45px;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+nav {
+    width: calc(100% - 110px);
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.overlay {
+    position: absolute
+}
+
+.image {
+    width: 68px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 100%
+}
+
+.image img {
+    width: 100%
+}
+
+header .image {
+    margin-right: 31px
+}
+
+.header__link {
+    display: flex
+}
+
+.nav__contents {
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    position: relative
+}
+
+a {
+    position: relative
+}
+
+.drop__menu,
+.nav__contents a,
+.rigister a {
+    text-decoration: none;
+    width: 85px;
+    display: block;
+    color: #000000ab;
+    transition: .2s ease-in-out;
+    -webkit-transition: .2s ease-in-out;
+    -moz-transition: .2s ease-in-out;
+    -ms-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out
+}
+
+.nav__contents a:hover,
+.rigister a:hover {
+    color: #000
+}
+
+a.btn {
+    border: .8px solid #000000ab;
+    width: 98px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 10px
+}
+
+a.btn:hover {
+    border: .8px solid #000
+}
+
+.rigister {
+    width: 270px;
+    display: flex;
+    align-items: center;
+    height: 100%
+}
+
+.close,
+.menu {
+    cursor: pointer;
+    display: none
+}
+
+.close .image,
+.menu .image {
+    width: 23px
+}
+
+.nav__contents a {
+    margin: 0 7px
+}
+
+.drop__menu {
+    margin-right: 11px;
+    position: relative
+}
+
+.drop {
+    width: 84px;
+    background: #fff;
+    position: absolute;
+    right: -17px;
+    top: 180%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    overflow: hidden;
+    height: 0;
+    transition: .5s ease-in-out;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -ms-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out
+}
+
+.nav__contents .drop__menu:nth-child(2) .drop {
+    width: 110px;
+    left: -75%
+}
+
+.drop__menu:hover .drop {
+    height: 100px;
+    padding: 0 10px;
+    box-shadow: .2px .1px 4px -1px grey
+}
+
+.drop__menu:nth-child(2):hover .drop {
+    height: 150px
+}
+
+@media (max-width:792px) {
+    nav {
+        width: 300px;
+        position: absolute;
+        background: #fff;
+        top: 0;
+        right: -100%;
+        height: 100%;
+        z-index: 999;
+        flex-direction: column;
+        transition: .3s ease-in-out;
+        -webkit-transition: .3s ease-in-out;
+        -moz-transition: .3s ease-in-out;
+        -ms-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out
+    }
+
+    .nav__contents {
+        justify-content: space-around;
+        height: auto;
+        flex-direction: column
+    }
+
+    .close,
+    .menu {
+        display: flex
+    }
+
+    .nav__contents a,
+    .rigister a {
+        margin: 0 0 5px
+    }
+
+    .rigister {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 23px 0
+    }
+
+    .rigister a {
+        text-align: center;
+        width: 180px
+    }
+
+    .nav__contents a {
+        width: 219px;
+        padding: 3px 25px
+    }
+
+    .close {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: end
+    }
+
+    .overlay {
+        width: 100%;
+        position: fixed;
+        height: 100%;
+        background: #0000008a;
+        z-index: 1;
+        display: none
+    }
+
+    nav.active {
+        right: 0;
+        box-shadow: -1000px -1000px 10px 1000px #000000a6
+    }
+
+    .overlay.active {
+        display: block
+    }
+
+    .drop__menu {
+        width: 100%
+    }
+
+    .drop {
+        position: relative;
+        right: 0;
+        top: 0;
+        left: 0
+    }
+
+    .nav__contents .drop__menu:nth-child(2) .drop {
+        width: 110px;
+        left: 0
+    }
+
+    .drop__menu {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%
+    }
+
+    .drop__menu:hover .drop {
+        box-shadow: 0 0 0 0 transparent
+    }
+}
+
+.nav__contents a svg {
+    transition: .5s ease-in-out;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -ms-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out
+}
+
+.drop__menu:hover:hover a svg {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg)
+}
+
+.drop a {
+    display: flex;
+    width: 100%;
+    margin: 3px;
+    font-size: 13px
+}
+
+.drop a .dropmenuicon {
+    margin-right: 10px
+}
+
+.left__side {
+    width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left__side a {
+    width: 120px;
+    background: #000;
+    color: #fff;
+    border: .5px solid;
+    text-align: center;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: .5s ease-in-out
+}
+
+.left__side p {
+    font-size: 15px;
+    font-weight: 600;
+    color: grey;
+    margin: 37px 0;
+    width: 331px;
+}
+
+.left__side a:hover {
+    background: #fff;
+    color: #000
+}
+
+.home {
+    width: 100%;
+    height: 492px;
+}
+
+.top {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center
+}
+
+.left__side div h1 {
+    margin: 0;
+    font-size: 59px;
+}
+
+.right__side {
+    width: 323px;
+    height: 100%;
+}
+
+.right__side img {
+    width: 100%
+}
+
+.mobile__image {
+    display: none
+}
+
+.drands {
+    width: 100%;
+    height: 50px;
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.drands .image {
+    height: 25px;
+}
+
+@media(max-width:860px){
+    .home {
+        min-height: 492px;
+    }
+
+    .top {
+        flex-direction: column-reverse;
+    }
+
+    .mobile__image {
+        display: block;
+    }
+
+    .desktop__image {
+        display: none
+    }
+
+    .left__side {
+        width: 100%;
+        min-height: 200px;
+        align-items: center;
+    }
+
+    .left__side div h1 {
+        margin: 0 5px;
+        font-size: 20px;
+    }
+
+    .left__side div {
+        width: 100%;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .left__side p {
+        margin: 15px 0;
+        text-align: center;
+        max-width: 270px;
+    }
+
+    .drands .image {
+        width: 97px;
+    }
+
+    .right__side {
+        max-width: 300px;
+    }
+    
+}
